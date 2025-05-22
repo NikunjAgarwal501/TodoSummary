@@ -54,12 +54,6 @@ Integrate Cohere's NLP model into the backend to generate summaries.
 
 The application follows the **MVC (Model-View-Controller)** architecture:
 
-Client (React frontend)
-       ↓  HTTP Request
-Controller (Spring Boot REST API)
-       ↓  Calls service layer
-Service Layer (Business logic, LLM & Slack API calls)
-       ↓
-Model & Repository (JPA entities + DB queries)
-       ↑
-      DB (Supabase PostgreSQL)
+The React frontend sends HTTP requests to the Spring Boot backend. The backend's controller forwards these requests to the service layer, which contains the main business logic. This layer handles LLM and Slack API integration and interacts with the JPA repository to fetch or store data in the Supabase PostgreSQL database. Responses then flow back to the frontend to update the UI.
+
+
